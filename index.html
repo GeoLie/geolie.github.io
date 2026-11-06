@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Georges Liesch – Back on Track</title>
+    <meta name="description" content="Official website of Georges Liesch – the album „Back on Track", Heartland Rock & Americana from Luxembourg." />
+    <style>
+      :root {
+        --bg: #14100c;
+        --bg2: #1e1710;
+        --paper: #f5ead8;
+        --accent: #d98324;
+        --accent2: #8c4a1f;
+        --muted: #b8a892;
+        --font: Georgia, "Times New Roman", serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--paper);
+        line-height: 1.65;
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+      /* ---------- HERO ---------- */
+      header.hero {
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background:
+          radial-gradient(ellipse at 50% 110%, rgba(217,131,36,0.28), transparent 60%),
+          linear-gradient(180deg, #14100c 0%, #241a10 60%, #14100c 100%);
+      }
+      .hero .vinyl {
+        width: 190px; height: 190px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at center, #f5ead8 0 18%, #14100c 19% 24%, #241a10 25% 55%, #14100c 56% 78%, #241a10 79% 100%);
+        border: 2px solid rgba(245,234,216,0.25);
+        box-shadow: 0 12px 48px rgba(0,0,0,0.7), inset 0 0 30px rgba(0,0,0,0.6);
+        animation: spin 14s linear infinite;
+        margin-bottom: 36px;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .hero h1 {
+        font-size: clamp(2.4rem, 7vw, 4.2rem);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .hero h1 span { color: var(--accent); }
+      .hero p.tagline {
+        margin-top: 14px;
+        font-style: italic;
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+      .hero .cta {
+        margin-top: 40px;
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 30px;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        font-family: var(--font);
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: all 0.25s;
+      }
+      .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+      .btn.solid { background: var(--accent); color: var(--bg); }
+      .btn.solid:hover { background: var(--paper); border-color: var(--paper); }
+      .scroll-hint {
+        position: absolute;
+        bottom: 26px;
+        color: var(--muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        animation: bounce 2.2s ease infinite;
+      }
+      @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(8px);} }
+
+      /* ---------- NAV ---------- */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(20,16,12,0.94);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(245,234,216,0.12);
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      nav .brand { font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--paper); }
+      nav .brand span { color: var(--accent); }
+      nav ul { display: flex; gap: 28px; list-style: none; }
+      nav ul a {
+        color: var(--muted);
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      nav ul a:hover { color: var(--accent); text-decoration: none; }
+      @media (max-width: 640px) { nav ul { gap: 14px; } nav ul a { font-size: 0.75rem; } }
+
+      /* ---------- SECTIONS ---------- */
+      section { padding: 90px 0; }
+      section:nth-child(even) { background: var(--bg2); }
+      h2 {
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--accent2), transparent); }
+      .lead { font-size: 1.15rem; color: var(--paper); max-width: 720px; }
+      .lead + .lead, .lead p { margin-top: 18px; }
+      .muted { color: var(--muted); }
+
+      /* ---------- ALBUM ---------- */
+      .album-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      @media (max-width: 760px) { .album-grid { grid-template-columns: 1fr; } }
+      .cover {
+        aspect-ratio: 1;
+        background:
+          radial-gradient(circle at 30% 25%, #2b1f13, #191007 70%),
+          var(--bg);
+        border: 1px solid rgba(245,234,216,0.18);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+      .cover .big {
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 1.25;
+      }
+      .cover .big span { color: var(--accent); }
+      .cover .sub { margin-top: 10px; color: var(--muted); font-style: italic; font-size: 0.95rem; }
+      .cover .note { margin-top: 26px; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.25em; text-transform: uppercase; }
+
+      ol.tracklist { list-style: none; counter-reset: track; }
+      ol.tracklist li {
+        counter-increment: track;
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 13px 6px;
+        border-bottom: 1px solid rgba(245,234,216,0.1);
+      }
+      ol.tracklist li::before {
+        content: counter(track, decimal-leading-zero);
+        color: var(--accent);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        min-width: 2.2em;
+      }
+      ol.tracklist .t { flex: 1; }
+      ol.tracklist .badge {
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--bg);
+        background: var(--accent);
+        padding: 3px 9px;
+        border-radius: 2px;
+      }
+      .album-note { margin-top: 22px; color: var(--muted); font-style: italic; font-size: 0.95rem; }
+
+      /* ---------- SHOP / BANDCAMP ---------- */
+      .shop-card {
+        border: 1px solid rgba(245,234,216,0.18);
+        background: var(--bg);
+        padding: 40px;
+        text-align: center;
+      }
+      .shop-card h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 12px;
+        font-size: 1.15rem;
+      }
+      .shop-card p { color: var(--muted); margin-bottom: 26px; }
+
+      /* ---------- BIO ---------- */
+      .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+      @media (max-width: 760px) { .bio-grid { grid-template-columns: 1fr; } }
+      .fact {
+        border-left: 3px solid var(--accent);
+        padding: 6px 0 6px 16px;
+        margin-top: 16px;
+      }
+      .fact .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); }
+      .fact .v { color: var(--muted); }
+
+      /* ---------- CONTACT ---------- */
+      .contact-cta { text-align: center; }
+      .contact-cta .mail { font-size: 1.3rem; }
+
+      footer {
+        border-top: 1px solid rgba(245,234,216,0.12);
+        padding: 36px 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="top">
+      <div class="vinyl" aria-hidden="true"></div>
+      <h1>Georges Liesch<br /><span>Back on Track</span></h1>
+      <p class="tagline">Heartland Rock &amp; Americana from Luxembourg</p>
+      <div class="cta">
+        <a class="btn solid" href="#album">The Album</a>
+        <a class="btn" href="#bandcamp">Buy on Bandcamp</a>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">▼</div>
+    </header>
+
+    <!-- ============ NAV ============ -->
+    <nav>
+      <div class="wrap">
+        <span class="brand">Georges <span>Liesch</span></span>
+        <ul>
+          <li><a href="#album">Album</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#bandcamp">Shop</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ============ ALBUM ============ -->
+    <section id="album">
+      <div class="wrap">
+        <h2>The Album</h2>
+        <div class="album-grid">
+          <div class="cover">
+            <div class="big">Back <span>on</span> Track</div>
+            <div class="sub">A concept album about breaks,<br />detours and new beginnings</div>
+            <div class="note">Cover placeholder</div>
+          </div>
+          <div>
+            <p class="lead">
+              Ten original songs, one common thread: "Back on Track" tells of setbacks, detours
+              and the moment you find your way back to the stage – and back to life.
+              Recorded in a Luxembourg studio, produced with the guidance of US producer Ross Petersen.
+            </p>
+            <ol class="tracklist" style="margin-top: 26px;">
+              <li><span class="t">Back on Track</span><span class="badge">Single</span></li>
+              <li><span class="t">Walking in My Shoes</span></li>
+              <li><span class="t">Careless Days</span></li>
+              <li><span class="t">Rich on Nothin'</span></li>
+              <li><span class="t">Track 5</span><span class="muted">to be announced</span></li>
+              <li><span class="t">Track 6</span><span class="muted">to be announced</span></li>
+              <li><span class="t">Track 7</span><span class="muted">to be announced</span></li>
+              <li><span class="t">Track 8</span><span class="muted">to be announced</span></li>
+              <li><span class="t">Track 9</span><span class="muted">to be announced</span></li>
+              <li><span class="t">Track 10</span><span class="muted">to be announced</span></li>
+            </ol>
+            <p class="album-note">
+              Rooted in the sound of Tom Petty, Bruce Springsteen and John Mellencamp –
+              Fender Telecaster &amp; harmonica included.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ÜBER ============ -->
+    <section id="about">
+      <div class="wrap">
+        <h2>About Me</h2>
+        <div class="bio-grid">
+          <div>
+            <p class="lead">
+              Georges Liesch is a guitarist, singer and songwriter from Luxembourg. After early years
+              of playing originals in the 80s (Peavey Hawk) and a stretch as a cover-band guitarist
+              (Chorus Line), he returned to music in 2015 – graduating in electric guitar at the
+              Differdange music school, with ongoing vocal and bagpipe studies.
+            </p>
+            <p class="lead muted">
+              Since 2019 he is the singer and guitarist of <strong>FAYE and the MOCKINGBIRDS</strong>
+              (repertoire from the 1960s to today). "Back on Track" is his first solo album.
+            </p>
+          </div>
+          <div>
+            <div class="fact"><div class="k">Instruments</div><div class="v">Electric &amp; acoustic guitar, vocals, harmonica, bagpipes</div></div>
+            <div class="fact"><div class="k">Band</div><div class="v">FAYE and the MOCKINGBIRDS (since 2019)</div></div>
+            <div class="fact"><div class="k">Style</div><div class="v">Heartland Rock, Americana</div></div>
+            <div class="fact"><div class="k">Influences</div><div class="v">Tom Petty, Bruce Springsteen, John Mellencamp</div></div>
+            <div class="fact"><div class="k">Rights society</div><div class="v">SACEM Luxembourg</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOP / BANDCAMP ============ -->
+    <section id="bandcamp">
+      <div class="wrap">
+        <h2>Shop</h2>
+        <div class="shop-card">
+          <h3>Buy the Album &amp; Songs</h3>
+          <p>
+            Once released, "Back on Track" will be available as download or CD directly on
+            Bandcamp – including early-bird offers and your name in the booklet (details to follow).
+          </p>
+          <!--
+            HIER SPÄTER DER BANDCAMP-EMBED EINGEFÜGT WERDEN:
+            <iframe style="border: 0; width: 100%; height: 120px;"
+              src="https://bandcamp.com/EmbeddedPlayer/album=ID/size=large/..."
+              seamless><a href="https://georgesliesch.bandcamp.com/album/back-on-track">…</a></iframe>
+          -->
+          <a class="btn solid" href="https://bandcamp.com" target="_blank" rel="noopener">→ Bandcamp Shop (coming soon)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="wrap contact-cta">
+        <h2>Contact</h2>
+        <p class="lead" style="margin: 0 auto 28px;">
+          For booking, press and everything about "Back on Track":
+        </p>
+        <p class="mail"><a href="mailto:contact@liesch.lu">contact@liesch.lu</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <span>© 2026 Georges Liesch · liesch.lu</span>
+        <span>Heartland Rock &amp; Americana from Luxembourg</span>
+      </div>
+    </footer>
+  </body>
+</html>
