@@ -226,6 +226,31 @@
       .fact .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); }
       .fact .v { color: var(--muted); }
 
+      /* ---------- JOURNAL ---------- */
+      .journal-entry {
+        border-left: 3px solid var(--accent);
+        padding: 4px 0 4px 22px;
+        margin-bottom: 44px;
+      }
+      .journal-entry .date {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .journal-entry h3 { font-size: 1.25rem; letter-spacing: 0.03em; margin-bottom: 12px; }
+      .journal-entry p { color: var(--muted); margin-bottom: 12px; }
+      .journal-entry p strong, .journal-entry p em { color: var(--paper); }
+      .crew { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+      .crew span {
+        border: 1px solid rgba(245,234,216,0.22);
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        color: var(--paper);
+      }
+      .crew span b { color: var(--accent); font-weight: normal; }
+
       /* ---------- CONTACT ---------- */
       .contact-cta { text-align: center; }
       .contact-cta .mail { font-size: 1.3rem; }
@@ -262,6 +287,7 @@
         <span class="brand">Georges <span>Liesch</span></span>
         <ul>
           <li><a href="#album">Album</a></li>
+          <li><a href="#journal">Journal</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#bandcamp">Shop</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -320,6 +346,53 @@
             <div class="fact"><div class="k">Rights society</div><div class="v">SACEM Luxembourg</div></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <section id="journal">
+      <div class="wrap">
+        <h2>Journal</h2>
+
+        <div class="journal-entry">
+          <div class="date">November 2026</div>
+          <h3>Preproduction of "Back on Track" – final phase</h3>
+          <p>
+            The title track is taking shape: the basic structure and the lyrics are in place.
+            A Fender Telecaster will carry the main track, layered with an Ovation Elite Standard
+            for depth in the verses. Next step: fine-tuning the arrangement before we hit the studio.
+          </p>
+          <div class="crew">
+            <span><b>Georges Liesch</b> – Vocals, Guitars, Harp</span>
+            <span><b>Mar Lanner</b> – Guitar</span>
+            <span><b>Yannick Genot</b> – Drums</span>
+            <span><b>Jean-Luc Pauly</b> – Bass</span>
+            <span><b>Ross Petersen</b> – Producer</span>
+          </div>
+          <p style="margin-top: 14px;">
+            The song will also feature <em>accordion</em> – the guest musician will be announced soon.
+          </p>
+        </div>
+
+        <div class="journal-entry">
+          <div class="date">November 2026</div>
+          <h3>Financing applications submitted</h3>
+          <p>
+            Applications for project funding support have been submitted –
+            an important step towards turning this album into reality.
+          </p>
+        </div>
+
+        <div class="journal-entry">
+          <div class="date">13 October 2026</div>
+          <h3>Two songs registered with SACEM</h3>
+          <p>
+            <strong>"Back on Track"</strong> and <strong>"Walking in My Shoes"</strong>
+            are now officially registered with SACEM Luxembourg. Both songs had their live
+            premiere on 8 October 2026 at Café M'Tisse in Differdange.
+          </p>
+        </div>
+
       </div>
     </section>
 
